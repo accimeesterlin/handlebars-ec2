@@ -4,6 +4,11 @@ const router = express.Router();
 const orm = require("../config/orm");
 
 router.get("/", function (req, res) {
+    res.render("index");
+});
+
+
+router.get("/", function (req, res) {
     orm.selectAllBy('is_favorite', false, function (error, result) {
         if (error) {
             return res.render('error');
